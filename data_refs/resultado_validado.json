@@ -1,0 +1,217 @@
+{
+  "export_metadata": {
+    "project": "YOLO Pavimentos - Explorador de Referencias V1",
+    "source_catalog": "catalogo_referencias_reales_v2.json",
+    "export_date": "2026-04-25T21:00:02.760Z",
+    "total_exported": 3,
+    "version": "V1"
+  },
+  "export_summary": {
+    "total": 3,
+    "aceptados": 1,
+    "validar": 2,
+    "rechazados": 0
+  },
+  "references": [
+    {
+      "id": "REF-001",
+      "title": "Baseline V2",
+      "grafico_label": "Baseline",
+      "type": "baseline",
+      "status": "estable",
+      "decision": "VALIDAR",
+      "score": 0.72,
+      "detections": 120,
+      "false_positives": 15,
+      "false_negatives": 25,
+      "delta_score": 0,
+      "delta_detections": 0,
+      "delta_false_positives": 0,
+      "delta_false_negatives": 0,
+      "indice_calidad": 0.705,
+      "semaforo": "NARANJA",
+      "ranking": 2,
+      "lectura_tecnica": "Referencia base",
+      "source_project": "Etapa 2 - Baseline V2",
+      "experiment_path": "/content/drive/MyDrive/YOLO_projects/YOLO_Pavimentos_Etapa2_BaselineV2_OptimizaciónControlada/06_EXPERIMENTOS/EXP_E2_BV2_CTRL_001",
+      "comparison_path": "/content/drive/MyDrive/YOLO_projects/YOLO_Pavimentos_Etapa2_BaselineV2_OptimizaciónControlada/07_RESULTADOS_COMPARATIVOS",
+      "images": [
+        {
+          "file": "img_001.jpg",
+          "path": "assets/detections/baseline_v2/img_001.jpg"
+        },
+        {
+          "file": "img_002.jpg",
+          "path": "assets/detections/baseline_v2/img_002.jpg"
+        }
+      ]
+    },
+    {
+      "id": "REF-002",
+      "title": "Experimento CONF 0.20",
+      "grafico_label": "CONF 0.20",
+      "type": "experimento",
+      "status": "estable",
+      "decision": "ACEPTADO",
+      "score": 0.72,
+      "detections": 140,
+      "false_positives": 30,
+      "false_negatives": 10,
+      "delta_score": 0,
+      "delta_detections": 20,
+      "delta_false_positives": 15,
+      "delta_false_negatives": -15,
+      "indice_calidad": 0.69,
+      "semaforo": "ROJO",
+      "ranking": 3,
+      "lectura_tecnica": "Reduce FN, pero incrementa FP",
+      "source_project": "Etapa 2 - Baseline V2",
+      "experiment_path": "/content/drive/MyDrive/YOLO_projects/YOLO_Pavimentos_Etapa2_BaselineV2_OptimizaciónControlada/06_EXPERIMENTOS/EXP_E2_CONF_020",
+      "comparison_path": "/content/drive/MyDrive/YOLO_projects/YOLO_Pavimentos_Etapa2_BaselineV2_OptimizaciónControlada/07_RESULTADOS_COMPARATIVOS",
+      "images": [
+        {
+          "file": "img_001.jpg",
+          "path": "assets/detections/conf_020/img_001.jpg"
+        },
+        {
+          "file": "img_002.jpg",
+          "path": "assets/detections/conf_020/img_002.jpg"
+        }
+      ]
+    },
+    {
+      "id": "REF-003",
+      "title": "Experimento CONF 0.30",
+      "grafico_label": "CONF 0.30",
+      "type": "experimento",
+      "status": "estable",
+      "decision": "VALIDAR",
+      "score": 0.78,
+      "detections": 135,
+      "false_positives": 20,
+      "false_negatives": 12,
+      "delta_score": 0.06,
+      "delta_detections": 15,
+      "delta_false_positives": 5,
+      "delta_false_negatives": -13,
+      "indice_calidad": 0.76,
+      "semaforo": "VERDE",
+      "ranking": 1,
+      "lectura_tecnica": "Mejor equilibrio técnico frente al baseline",
+      "source_project": "Etapa 2 - Baseline V2",
+      "experiment_path": "/content/drive/MyDrive/YOLO_projects/YOLO_Pavimentos_Etapa2_BaselineV2_OptimizaciónControlada/06_EXPERIMENTOS/EXP_E2_CONF_030",
+      "comparison_path": "/content/drive/MyDrive/YOLO_projects/YOLO_Pavimentos_Etapa2_BaselineV2_OptimizaciónControlada/07_RESULTADOS_COMPARATIVOS",
+      "images": [
+        {
+          "file": "img_001.jpg",
+          "path": "assets/detections/conf_030/img_001.jpg"
+        },
+        {
+          "file": "img_002.jpg",
+          "path": "assets/detections/conf_030/img_002.jpg"
+        }
+      ]
+    }
+  ],
+  "ranking": [
+    {
+      "id": "REF-003",
+      "title": "Experimento CONF 0.30",
+      "grafico_label": "CONF 0.30",
+      "type": "experimento",
+      "status": "estable",
+      "decision": "VALIDAR",
+      "score": 0.78,
+      "detections": 135,
+      "false_positives": 20,
+      "false_negatives": 12,
+      "delta_score": 0.06,
+      "delta_detections": 15,
+      "delta_false_positives": 5,
+      "delta_false_negatives": -13,
+      "indice_calidad": 0.76,
+      "semaforo": "VERDE",
+      "ranking": 1,
+      "lectura_tecnica": "Mejor equilibrio técnico frente al baseline",
+      "source_project": "Etapa 2 - Baseline V2",
+      "experiment_path": "/content/drive/MyDrive/YOLO_projects/YOLO_Pavimentos_Etapa2_BaselineV2_OptimizaciónControlada/06_EXPERIMENTOS/EXP_E2_CONF_030",
+      "comparison_path": "/content/drive/MyDrive/YOLO_projects/YOLO_Pavimentos_Etapa2_BaselineV2_OptimizaciónControlada/07_RESULTADOS_COMPARATIVOS",
+      "images": [
+        {
+          "file": "img_001.jpg",
+          "path": "assets/detections/conf_030/img_001.jpg"
+        },
+        {
+          "file": "img_002.jpg",
+          "path": "assets/detections/conf_030/img_002.jpg"
+        }
+      ]
+    },
+    {
+      "id": "REF-001",
+      "title": "Baseline V2",
+      "grafico_label": "Baseline",
+      "type": "baseline",
+      "status": "estable",
+      "decision": "VALIDAR",
+      "score": 0.72,
+      "detections": 120,
+      "false_positives": 15,
+      "false_negatives": 25,
+      "delta_score": 0,
+      "delta_detections": 0,
+      "delta_false_positives": 0,
+      "delta_false_negatives": 0,
+      "indice_calidad": 0.705,
+      "semaforo": "NARANJA",
+      "ranking": 2,
+      "lectura_tecnica": "Referencia base",
+      "source_project": "Etapa 2 - Baseline V2",
+      "experiment_path": "/content/drive/MyDrive/YOLO_projects/YOLO_Pavimentos_Etapa2_BaselineV2_OptimizaciónControlada/06_EXPERIMENTOS/EXP_E2_BV2_CTRL_001",
+      "comparison_path": "/content/drive/MyDrive/YOLO_projects/YOLO_Pavimentos_Etapa2_BaselineV2_OptimizaciónControlada/07_RESULTADOS_COMPARATIVOS",
+      "images": [
+        {
+          "file": "img_001.jpg",
+          "path": "assets/detections/baseline_v2/img_001.jpg"
+        },
+        {
+          "file": "img_002.jpg",
+          "path": "assets/detections/baseline_v2/img_002.jpg"
+        }
+      ]
+    },
+    {
+      "id": "REF-002",
+      "title": "Experimento CONF 0.20",
+      "grafico_label": "CONF 0.20",
+      "type": "experimento",
+      "status": "estable",
+      "decision": "ACEPTADO",
+      "score": 0.72,
+      "detections": 140,
+      "false_positives": 30,
+      "false_negatives": 10,
+      "delta_score": 0,
+      "delta_detections": 20,
+      "delta_false_positives": 15,
+      "delta_false_negatives": -15,
+      "indice_calidad": 0.69,
+      "semaforo": "ROJO",
+      "ranking": 3,
+      "lectura_tecnica": "Reduce FN, pero incrementa FP",
+      "source_project": "Etapa 2 - Baseline V2",
+      "experiment_path": "/content/drive/MyDrive/YOLO_projects/YOLO_Pavimentos_Etapa2_BaselineV2_OptimizaciónControlada/06_EXPERIMENTOS/EXP_E2_CONF_020",
+      "comparison_path": "/content/drive/MyDrive/YOLO_projects/YOLO_Pavimentos_Etapa2_BaselineV2_OptimizaciónControlada/07_RESULTADOS_COMPARATIVOS",
+      "images": [
+        {
+          "file": "img_001.jpg",
+          "path": "assets/detections/conf_020/img_001.jpg"
+        },
+        {
+          "file": "img_002.jpg",
+          "path": "assets/detections/conf_020/img_002.jpg"
+        }
+      ]
+    }
+  ]
+}
