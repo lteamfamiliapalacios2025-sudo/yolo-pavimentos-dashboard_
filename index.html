@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+
+    <title>YOLO Pavimentos - Dashboard V3</title>
+    <link rel="stylesheet" href="./style.css?v=20260428_3">
+</head>
+
+<body class="tech-theme">
+    <div class="app-container">
+
+        <aside class="sidebar">
+            <header class="sidebar-header">
+                <div class="logo">
+                    <span class="logo-icon">📊</span>
+                    <h1>YOLO Pavimentos</h1>
+                </div>
+                <p class="subtitle">Dashboard técnico V3</p>
+
+                <div class="search-container">
+                    <input type="text" id="refSearch" placeholder="Buscar referencias..." autocomplete="off">
+                </div>
+            </header>
+
+            <nav class="ref-list-container">
+                <ul id="refList" class="ref-list"></ul>
+            </nav>
+
+            <footer class="sidebar-footer">
+                <span class="status-badge">Sistema: En Proceso</span>
+                <span id="sourceBadge" class="status-badge source-badge">Fuente: cargando...</span>
+            </footer>
+        </aside>
+
+        <main class="main-content">
+
+            <section id="welcomeScreen" class="welcome-screen">
+                <div class="welcome-box">
+                    <h2>Dashboard YOLO Pavimentos</h2>
+                    <p>Seleccione una referencia o revise el panel técnico comparativo.</p>
+                </div>
+            </section>
+
+            <section id="dashboard" class="dashboard hidden">
+
+                <div class="panel summary-panel">
+                    <div class="panel-header">
+                        <h2 id="refTitle">Título</h2>
+                        <span id="refTypeBadge" class="badge">Tipo</span>
+                    </div>
+
+                    <div class="evaluation-strip">
+                        <span id="evalStatus">Evaluación cargada</span>
+                    </div>
+
+                    <div class="summary-grid">
+                        <div class="summary-item"><label>ID</label><span id="refId"></span></div>
+                        <div class="summary-item"><label>Estado</label><span id="refStatus"></span></div>
+                        <div class="summary-item"><label>Proyecto fuente</label><span id="refSource"></span></div>
+
+                        <div class="summary-item"><label>Tipo técnico</label><span id="refTechType"></span></div>
+                        <div class="summary-item"><label>Versión</label><span id="refVersion"></span></div>
+                        <div class="summary-item"><label>Visible en app</label><span id="refVisible"></span></div>
+
+                        <div class="summary-item"><label>Detecciones</label><span id="metricDetections"></span></div>
+                        <div class="summary-item"><label>Falsos positivos</label><span id="metricFP"></span></div>
+                        <div class="summary-item"><label>Falsos negativos</label><span id="metricFN"></span></div>
+
+                        <div class="summary-item"><label>Score</label><span id="metricScore"></span></div>
+
+                        <div class="summary-item full-width">
+                            <label>Interpretación</label>
+                            <span id="metricConclusion"></span>
+                        </div>
+
+                        <div class="summary-item full-width">
+                            <label>Comparación vs baseline</label>
+                            <span id="baselineComparison"></span>
+                        </div>
+
+                        <div class="summary-item full-width">
+                            <label>Decisión técnica</label>
+                            <span id="technicalDecision"></span>
+                        </div>
+
+                        <div class="summary-item full-width">
+                            <label>Notas</label>
+                            <p id="refNotes"></p>
+                        </div>
+                    </div>
+
+                    <div class="actions-bar">
+                        <button id="btnOpenExp" class="btn btn-primary">Copiar Ruta Experimento</button>
+                        <button id="btnOpenComp" class="btn btn-secondary">Copiar Ruta Comparación</button>
+                        <button id="btnCopyMetadata" class="btn btn-outline">Copiar Metadata</button>
+                    </div>
+                </div>
+
+                <div class="panel image-panel">
+                    <div class="panel-header">
+                        <h3>Comparador visual: Baseline vs Experimento</h3>
+                    </div>
+
+                    <div class="compare-viewer">
+                        <div class="compare-card">
+                            <h4>Baseline V2</h4>
+                            <img id="baselineImage" src="" alt="Baseline V2">
+                            <p id="baselineImageInfo">Sin imagen cargada</p>
+                        </div>
+
+                        <div class="compare-card">
+                            <h4>Experimento seleccionado</h4>
+                            <img id="experimentImage" src="" alt="Experimento">
+                            <p id="experimentImageInfo">Sin imagen cargada</p>
+                        </div>
+                    </div>
+
+                    <div class="image-controls">
+                        <button id="btnPrevCompare" class="btn btn-secondary">◀ Anterior</button>
+                        <button id="btnNextCompare" class="btn btn-secondary">Siguiente ▶</button>
+                        <button id="btnCopyComparePaths" class="btn btn-outline">Copiar rutas</button>
+                    </div>
+                </div>
+
+                <div class="panel powerbi-panel">
+                    <div class="panel-header">
+                        <h3>Dashboard técnico tipo Power BI</h3>
+                    </div>
+
+                    <div class="filters-bar">
+                        <select id="filterType">
+                            <option value="">Tipo: Todos</option>
+                            <option value="baseline">Baseline</option>
+                            <option value="experimento">Experimento</option>
+                        </select>
+
+                        <select id="filterSemaforo">
+                            <option value="">Semáforo: Todos</option>
+                            <option value="VERDE">Verde</option>
+                            <option value="AMARILLO">Amarillo</option>
+                            <option value="NARANJA">Naranja</option>
+                            <option value="ROJO">Rojo</option>
+                        </select>
+
+                        <select id="filterDecision">
+                            <option value="">Decisión: Todas</option>
+                            <option value="ACEPTADO">Aceptado</option>
+                            <option value="VALIDAR">Validar</option>
+                            <option value="RECHAZADO">Rechazado</option>
+                        </select>
+
+                        <button id="btnClearFilters" class="btn btn-outline">Limpiar filtros</button>
+                    </div>
+
+                    <div class="kpi-grid">
+                        <div class="kpi-card"><label>Total referencias</label><strong id="totalRefs">-</strong></div>
+                        <div class="kpi-card"><label>Baselines</label><strong id="totalBaselines">-</strong></div>
+                        <div class="kpi-card"><label>Experimentos</label><strong id="totalExperiments">-</strong></div>
+                        <div class="kpi-card"><label>Aceptadas</label><strong id="totalAccepted">-</strong></div>
+                        <div class="kpi-card"><label>En validación</label><strong id="totalReview">-</strong></div>
+                        <div class="kpi-card"><label>Rechazadas</label><strong id="totalRejected">-</strong></div>
+                        <div class="kpi-card kpi-highlight"><label>Mejor IC</label><strong id="bestScore">-</strong>
+                        </div>
+                    </div>
+
+                    <div class="best-box">
+                        <label>Referencia con mejor índice de calidad</label>
+                        <strong id="bestReference">-</strong>
+                    </div>
+
+                    <div class="visual-grid">
+                        <div class="visual-card">
+                            <h4>Ranking técnico</h4>
+                            <ol id="rankingList" class="ranking-list"></ol>
+                            <div id="rankingConclusion" class="ranking-conclusion"></div>
+                        </div>
+
+                        <div class="visual-card">
+                            <h4>Ranking global por índice de calidad</h4>
+                            <div id="qualityChart" class="bar-chart"></div>
+                        </div>
+
+                        <div class="visual-card">
+                            <h4>Comparación global FP / FN</h4>
+                            <div id="errorChart" class="bar-chart"></div>
+                        </div>
+                    </div>
+
+                    <div class="comparison-card">
+                        <h4>Tabla comparativa técnica</h4>
+                        <div class="table-wrap">
+                            <table class="comparison-table">
+                                <thead>
+                                    <tr>
+                                        <th>Ranking</th>
+                                        <th>Referencia</th>
+                                        <th>Tipo</th>
+                                        <th>Score</th>
+                                        <th>IC</th>
+                                        <th>Detecciones</th>
+                                        <th>FP</th>
+                                        <th>FN</th>
+                                        <th>Semáforo</th>
+                                        <th>Decisión</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="comparisonTableBody"></tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="manual-card">
+                        <label>Validación manual</label>
+                        <div class="decision-actions">
+                            <button id="btnAccept" class="btn btn-primary">Aceptar</button>
+                            <button id="btnReview" class="btn btn-secondary">Validar</button>
+                            <button id="btnReject" class="btn btn-outline">Rechazar</button>
+                            <button id="btnExport" class="btn btn-primary">Exportar resultado</button>
+                        </div>
+                        <span id="manualDecision">Sin decisión manual</span>
+                    </div>
+                </div>
+
+                <div class="panel detail-panel">
+                    <div class="panel-header">
+                        <h3>Detalle JSON</h3>
+                    </div>
+
+                    <div class="json-viewer-container">
+                        <pre id="jsonViewer" class="json-viewer"></pre>
+                    </div>
+                </div>
+
+            </section>
+        </main>
+    </div>
+
+    <div id="toast" class="toast hidden">Copiado</div>
+
+    <script src="./main.js?v=20260428_3"></script>
+</body>
+
+</html>
