@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const DATA_SOURCE = '../data_refs/resultado_validado.json';
+    const DATA_SOURCE = './data_refs/resultado_validado.json';
     const DATA_SOURCE_LABEL = 'Fuente: resultado validado';
 
     let allRefs = [];
